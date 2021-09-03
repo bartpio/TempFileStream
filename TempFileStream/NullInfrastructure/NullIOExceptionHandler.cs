@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using TempFileStream.Abstractions;
 
-namespace TempFileStream.Infrastructure
+namespace TempFileStream.NullInfrastructure
 {
     /// <summary>
     /// temp file creation i/o exception handler that never calls for trying again

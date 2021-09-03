@@ -12,7 +12,7 @@ namespace TempFileStream.Infrastructure
     /// background temp file disposer
     /// launches a task for each temp file to be deleted, then returns straight away
     /// </summary>
-    public class BackgroundTempFileDisposer : ITempFileDisposer
+    public class BackgroundTempFileDeleter : ITempFileDeleter
     {
         private readonly ILogger _logger;
         private long _totalDeleted;
@@ -24,7 +24,7 @@ namespace TempFileStream.Infrastructure
         /// construct
         /// </summary>
         /// <param name="logger"></param>
-        public BackgroundTempFileDisposer(ILogger<BackgroundTempFileDisposer> logger)
+        public BackgroundTempFileDeleter(ILogger<BackgroundTempFileDeleter> logger)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }

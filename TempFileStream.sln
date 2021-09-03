@@ -5,7 +5,12 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TempFileStream", "TempFileStream\TempFileStream.csproj", "{D6C65FD7-F3A5-4775-B260-3EB8A9BBA1DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempFileStream.Tests", "TempFileStream.Tests\TempFileStream.Tests.csproj", "{D8C8FB20-B648-4CC3-B679-9704995CBE92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TempFileStream.Tests", "TempFileStream.Tests\TempFileStream.Tests.csproj", "{D8C8FB20-B648-4CC3-B679-9704995CBE92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2AC2F75E-345D-4F69-9DB6-A2F3F4DBE9FA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

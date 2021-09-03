@@ -7,10 +7,10 @@
     <PackageProjectUrl>https://github.com/bartpio/TempFileStream</PackageProjectUrl>
     <RepositoryUrl>https://github.com/bartpio/TempFileStream</RepositoryUrl>
     <Description>Makes using disk-backed temporary storage (almost) as simple as using a MemoryStream. Implements IDisposable.</Description>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <Version>2.0.0</Version>
     <Copyright>(c) 2021 Contributors. All rights reserved.</Copyright>
-    <PackageReleaseNotes>README</PackageReleaseNotes>
+    <PackageReleaseNotes>Provide in-memory implementation, for use as a fallback, when writeable disk storage is not available.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">

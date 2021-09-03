@@ -6,7 +6,7 @@ namespace TempFileStream.Abstractions
     /// temp file disposer
     /// deletes temp files when we no longer need them
     /// </summary>
-    public interface ITempFileDisposer
+    public interface ITempFileDeleter
     {
         /// <summary>
         /// delete a temp file

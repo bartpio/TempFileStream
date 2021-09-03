@@ -15,7 +15,7 @@ namespace TempFileStream.Abstractions
         /// <param name="tempFileStreamFactory">for temp file creation</param>
         /// <param name="readStreamFactory">for temp file reading</param>
         /// <param name="tempFileDisposer">for temp file deletion</param>
-        public TempFileDependencies(ILoggerFactory loggerFactory, ITempFileStreamFactory tempFileStreamFactory, IReadStreamFactory readStreamFactory, ITempFileDisposer tempFileDisposer)
+        public TempFileDependencies(ILoggerFactory loggerFactory, ITempFileStreamFactory tempFileStreamFactory, IReadStreamFactory readStreamFactory, ITempFileDeleter tempFileDisposer)
         {
             LoggerFactory = loggerFactory ?? throw new ArgumentNullException(nameof(loggerFactory));
             TempFileStreamFactory = tempFileStreamFactory ?? throw new ArgumentNullException(nameof(tempFileStreamFactory));
@@ -41,6 +41,6 @@ namespace TempFileStream.Abstractions
         /// <summary>
         /// for temp file deletion
         /// </summary>
-        public ITempFileDisposer TempFileDisposer { get; }
+        public ITempFileDeleter TempFileDisposer { get; }
     }
 }

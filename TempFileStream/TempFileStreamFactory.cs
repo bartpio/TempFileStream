@@ -40,7 +40,7 @@ namespace TempFileStream
                 {
                     if (_logger.IsEnabled(LogLevel.Debug))
                     {
-                        _logger.LogDebug($"Creating temp file {fullFileName} (#{attemptIdx})");
+                        _logger.LogDebug($"Creating temp file {fullFileName} (attempt#{attemptIdx})");
                     }
                     return (_streams.CreateWriteStream(fullFileName), fullFileName);
                 }

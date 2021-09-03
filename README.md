@@ -4,7 +4,7 @@ Geared towards net core services using DI (IServiceProvider).
 
 ## Why?
 Disk-based temporary storage is often under-utilized. Consider that some cloud providers provide fast ephemeral storage
-free of additional charge!
+for little if any cost!
 
 ## Commonly used Interfaces
 To create a temp file, use ITempFileFactory's CreateTempFile method. This provides an instance of
@@ -40,7 +40,7 @@ some of the interfaces could in theory choose to not honor TempFileStreamConfig.
 ## DI Registration
 ```csharp
 // without any particular configuration (suitable for many use cases)
-services.AddTempFileStream();
+services.AddDiskBasedTempFileStream(); // if writeable disk not available, use AddMemoryBasedTempFileStream as a drop-in fallback
 
 // with custom configuration
 services.AddTempFileStream().Configure<TempFileStreamConfig>(cfg =>

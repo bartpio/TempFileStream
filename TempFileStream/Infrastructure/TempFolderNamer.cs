@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Options;
-using System;
 using System.IO;
 using TempFileStream.Abstractions;
 
@@ -8,35 +7,23 @@ namespace TempFileStream.Infrastructure
     /// <summary>
     /// temp folder namer, which honors <see cref="TempFileStreamConfig"/>, using <see cref="Path.GetTempPath"/> as default if nothing configured
     /// </summary>
-    public class TempFolderNamer : ITempFolderNamer
+    public class TempFolderNamer : TempFolderNamerBase
     {
-        private readonly TempFileStreamConfig _cfg;
-
         /// <summary>
         /// construct
         /// </summary>
         /// <param name="options"></param>
-        public TempFolderNamer(IOptions<TempFileStreamConfig> options)
+        public TempFolderNamer(IOptions<TempFileStreamConfig> options) : base(options)
         {
-            if (options is null)
-            {
-                throw new ArgumentNullException(nameof(options));
-            }
-
-            _cfg = options.Value;
         }
 
-        /// <inheritdoc/>
-        public string GetTempFolder()
+        /// <summary>
+        /// get temp folder (for use when not otherwise configured) using a call to <see cref="Path.GetTempPath"/>
+        /// </summary>
+        /// <returns>temp folder (for use when not otherwise configured) using a call to <see cref="Path.GetTempPath"/></returns>
+        public override string GetFallbackTempFolder()
         {
-            if (!string.IsNullOrWhiteSpace(_cfg.RootFolder))
-            {
-                return _cfg.RootFolder;
-            }
-            else
-            {
-                return Path.GetTempPath();
-            }
+            return Path.GetTempPath();
         }
     }
 }
